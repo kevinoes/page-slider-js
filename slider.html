@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page-slider-js</title>
+    <script src="slider.js"></script>
+    <link rel="stylesheet" href="slider.css">
+
+    <style>
+      #norwegian {
+        background: linear-gradient(225deg, #ffc27d, #ff8e93);
+      }
+      #french {
+        background: linear-gradient(#f3defc, #63a3e6);
+      }
+      #spanish {
+        background: linear-gradient(#d2fcad, #22eaeb);
+      }
+      #hindi{
+        background: linear-gradient(#f0bed4, #a163f5);
+      }
+      #mandarin {
+        background: linear-gradient(#65cce1, #6365ec);
+      }
+
+      section > span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 7vw;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slides">
+      <section id="norwegian"><span>Hallo</span></section>
+      <section id="french"><span>Bonjour</span></section>
+      <section id="spanish"><span>Hola</span></section>
+      <section id="hindi"><span>Namaste</span></section>
+      <section id="mandarin"><span>你好</span></section>
+    </div>
+
+    <script>
+      slider('.slides');
+    </script>
+  </body>
+</html>
