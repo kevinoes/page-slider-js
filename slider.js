@@ -13,7 +13,8 @@ var slider = function (sliderElement) {
 		// control scrolling
 		whatWheel = 'onwheel' in document.createElement('div') ? 'wheel' : document.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
 		window.addEventListener(whatWheel, function (e) {
-			if (e.wheelDelta > 0) {
+      var direction = e.wheelDelta || e.deltaY;
+  		if (direction > 0) {
 				changeSlide(-1);
 			} else {
 				changeSlide(1);
