@@ -18,7 +18,7 @@ var slider = function (sliderElement) {
 				changeSlide(-1);
 			} else {
 				changeSlide(1);
-			}
+      }
 		});
 
 		// allow keyboard input
@@ -83,7 +83,7 @@ var slider = function (sliderElement) {
 				changeSlide(-1);
 			} else if (touchStartPos > touchStopPos + touchMinLength) {
 				changeSlide(1);
-			}
+      }
 		});
 	};
 
@@ -158,5 +158,10 @@ var slider = function (sliderElement) {
 		init();
 	} else {
 		window.addEventListener('onload', init(), false);
+	}
+
+  // expose gotoSlide function
+	return {
+		gotoSlide: gotoSlide
 	}
 };
