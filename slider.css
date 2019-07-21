@@ -10,7 +10,7 @@ body.slider__body {
 }
 
 .slider__container {
-	position: relative;
+	position: fixed;
 	display: block;
 	height: 100%;
 	width: 100%;
@@ -22,7 +22,6 @@ body.slider__body {
 	transition: -webkit-transform 500ms ease-in-out;
 	-o-transition: transform 500ms ease-in-out;
 	transition: transform 500ms ease-in-out;
-	transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
 }
 
 .slider__page {
@@ -32,7 +31,7 @@ body.slider__body {
 }
 
 .slider__indicators {
-	position: absolute;
+	position: fixed;
 	left: 18px;
 	top: 50%;
 	z-index: 2;
