@@ -11,7 +11,7 @@ var slider = function (sliderElement) {
     document.body.classList.add('slider__body');
 
     // control scrolling
-    whatWheel = 'onwheel' in document.createElement('div') ? 'wheel' : document.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
+    var whatWheel = 'onwheel' in document.createElement('div') ? 'wheel' : document.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
     window.addEventListener(whatWheel, function (e) {
       var direction = e.wheelDelta || e.deltaY;
       if (direction > 0) {
@@ -67,14 +67,18 @@ var slider = function (sliderElement) {
     var touchStopPos = 0;
     var touchMinLength = 90;
     document.addEventListener('touchstart', function (e) {
-      e.preventDefault();
+      if (e.target.nodeName !== "BUTTON" && e.target.nodeName !== "A") {
+        e.preventDefault();
+      }
       if (e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel') {
         var touch = e.touches[0] || e.changedTouches[0];
         touchStartPos = touch.pageY;
       }
     });
     document.addEventListener('touchend', function (e) {
-      e.preventDefault();
+      if (e.target.nodeName !== "BUTTON" && e.target.nodeName !== "A") {
+        e.preventDefault();
+      }
       if (e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel') {
         var touch = e.touches[0] || e.changedTouches[0];
         touchStopPos = touch.pageY;
